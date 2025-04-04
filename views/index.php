@@ -1,56 +1,7 @@
 <?php 
 
     require_once "../models/User.class.php";
-
-    $msg = array("", "", "", "");
-    $erro = false;
-
-    if ($_POST)
-    {
-        if(empty($_POST["nome"]))
-        {
-            $msg[0] = "O nome é obrigatório.";
-            $erro = true;
-        }
-
-        if(empty($_POST["email"]))
-        {
-            $msg[1] = "O e-mail é obrigatório.";
-            $erro = true;
-        }
-
-        if(empty($_POST["senha"]))
-        {
-            $msg[2] = "A senha é obrigatória.";
-            $erro = true;
-        }
-
-        if($_POST["senha"] != $_POST["confirmaSenha"])
-        {
-            $msg[3] = "As senhas não coincidem.";
-            $erro = true;
-        }
-
-        if(!$erro)
-        {
-            $user = new User
-            (
-                $_POST["nome"],
-                $_POST["email"],
-                $_POST["senha"]
-            )
-        }
-
-        if($erro)
-        {
-            $nome = $_POST["nome"];
-            $nome = $_POST["email"];
-            $nome = $_POST["senha"];
-            $nome = $_POST["confirmaSenha"];
-        }
-    }
-
-    
+    require_once "../validations/validations.php";
 
 ?>
 
@@ -63,29 +14,45 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" href="../css/styles.css">
     </head>
-
+    
     <body>
-        <h1>Cadastre-se</h1>
+        <div class="wrapper">
+            <h2>Cadastre-se</h2>
 
-        <form>
-            <label>Nome:</label>
-            <input type="text" name="nome" value="">
-            <br>
+            <form action="#" method="post">
 
-            <label>E-mail:</label>
-            <input type="email" name="email" value="">
-            <br>
+                <div class="input-field">
+                <label>Nome:</label>
+                <input type="text" name="nome" value=<?php echo $nome ?>>
+                </div>
+                <span class="error"><?php echo $msg[0] ?></span>
+                <br>
 
-            <label>Senha:</label>
-            <input type="password" name="senha" value="">
-            <br>
+                <div class="input-field">
+                <label>E-mail:</label>
+                <input type="email" name="email" value=<?php echo $email ?>>
+                </div>
+                <span class="error"><?php echo $msg[1] ?></span>
+                <br>
 
-            <label>Confirme a senha:</label>
-            <input type="password" name="confirmaSenha" value="">
-            <br>
+                <div class="input-field">
+                <label>Senha:</label>
+                <input type="password" name="senha" value=<?php echo $senha ?>>
+                </div>
+                <span class="error"><?php echo $msg[2] ?></span>
+                <br>
 
-            <input type="submit" value="Cadastrar">
-        </form>
+                <div class="input-field">
+                <label>Confirme a senha:</label>
+                <input type="password" name="confirmaSenha" value=<?php echo $confirmaSenha ?>>
+                </div>
+                <span class="error"><?php echo $msg[3] ?></span>
+                <br>
+
+                <input class="btn" type="submit" value="Cadastrar">
+
+            </form>
+        </div>
     </body>
 
 </html>
