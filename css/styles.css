@@ -8,12 +8,14 @@
 
 body
 {
+  background: url("https://grupoincopisos.com.br/wp-content/uploads/2024/06/painel-chao-75-pulpis-gray-ac-df4173.jpg");
+  background-size: cover;
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
   min-height: 100vh;
-  padding: 0 10px;
+  padding: 10px;
   background-color: #f7f4fc;
   color: crimson;
 }
@@ -66,7 +68,7 @@ h2
   border-radius: 10px;
   padding: 30px;
   text-align: center;
-  background-color: white;
+  background-color: rgb(255, 255, 255);
   border: 2px solid crimson;
   box-shadow: 0 5px 15px rgba(252, 58, 87, 0.733);
 }
@@ -96,5 +98,5 @@ h2
   color: #999;
   font-size: 1rem;
   background-color: white;
-  padding: 0 3px;
+  padding: 3px;
 }
