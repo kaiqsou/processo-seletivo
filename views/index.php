@@ -16,6 +16,13 @@
     </head>
     
     <body>
+        <?php if ($alert) 
+        {
+            echo "<script>
+                  alert('Nome: {$user -> getNome()}\\nE-mail: {$user -> getEmail()}\\nSenha: {$user -> getSenha()}\\n');
+                  </script>";
+        }
+        ?>
         <div class="wrapper">
             <h2>Cadastre-se</h2>
 

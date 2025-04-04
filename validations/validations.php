@@ -4,6 +4,7 @@
 
     $msg = array("", "", "", "");
     $erro = false;
+    $alert = false;
     $nome = "";
     $email = "";
     $senha = "";
@@ -18,20 +19,31 @@
             $erro = true;
         }
 
-        // validação do e-mail
+        // validações do e-mail
         if(empty($_POST["email"]))
         {
             $msg[1] = "O e-mail é obrigatório.";
             $erro = true;
         }
 
-        // validação da senha
+        if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+            $msg[1] = "E-mail inválido.";
+            $erro = true;
+        }
+
+        // validações da senha
         if(empty($_POST["senha"]))
         {
             $msg[2] = "A senha é obrigatória.";
             $erro = true;
         }
 
+        if (strlen($_POST["senha"]) < 8) {
+            $msg[2] = "A senha deve ter no mínimo 8 caracteres.";
+            $erro = true;
+        }
+
+        // comparação das senhas
         if($_POST["senha"] != $_POST["confirmaSenha"])
         {
             $msg[3] = "As senhas não coincidem.";
@@ -47,14 +59,16 @@
                 $_POST["email"],
                 $_POST["senha"]
             );
+
+            $alert = true;
         }
 
         if($erro)
         {
             $nome = $_POST["nome"];
-            $nome = $_POST["email"];
-            $nome = $_POST["senha"];
-            $nome = $_POST["confirmaSenha"];
+            $email = $_POST["email"];
+            $senha = $_POST["senha"];
+            $confirmaSenha = $_POST["confirmaSenha"];
         }
     }
 

@@ -4,15 +4,14 @@
     {
         public function __construct
         (
-            public string $nome = "",
-            public string $email = "",
-            public string $senha = "",
-            public string $confirmaSenha = ""
+            private string $nome = "",
+            private string $email = "",
+            private string $senha = "",
+            private string $confirmaSenha = ""
         ) {}
     
 
         // métodos nome
-
         public function getNome()
         {
             return $this -> nome;
@@ -24,7 +23,6 @@
         }
 
         // métodos email
-
         public function getEmail()
         {
             return $this -> email;
@@ -36,7 +34,6 @@
         }
         
         // métodos senha
-
         public function getSenha()
         {
             return $this -> senha;
