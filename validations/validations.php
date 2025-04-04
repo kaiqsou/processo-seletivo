@@ -25,8 +25,8 @@
             $msg[1] = "O e-mail é obrigatório.";
             $erro = true;
         }
-
-        if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL)) {
+        else if (!filter_var($_POST["email"], FILTER_VALIDATE_EMAIL))
+        {
             $msg[1] = "E-mail inválido.";
             $erro = true;
         }
@@ -37,8 +37,8 @@
             $msg[2] = "A senha é obrigatória.";
             $erro = true;
         }
-
-        if (strlen($_POST["senha"]) < 8) {
+        else if (strlen($_POST["senha"]) < 8) 
+        {
             $msg[2] = "A senha deve ter no mínimo 8 caracteres.";
             $erro = true;
         }

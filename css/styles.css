@@ -1,15 +1,100 @@
-.error 
+* 
 {
-    color: red;
-    font-size: 0.9rem;
-    margin-top: 5px;
-  };
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: sans-serif;
+}
 
-.wrapper
-{}
+body
+{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  padding: 0 10px;
+  background-color: #f7f4fc;
+  color: crimson;
+}
 
-.input-field
-{}
+form
+{
+  display: flex;
+  flex-direction: column;
+}
+
+h2
+{
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  color: crimson;
+}
 
 .btn
-{}
+{
+  background: crimson;
+  color: white;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: 0.3s;
+  width: 100%;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.btn:hover
+{
+  background: rgb(146, 9, 9)
+}
+
+.error 
+{
+  color: red;
+  font-size: 0.9rem;
+  margin-top: 5px;
+}
+
+.wrapper
+{
+  width: 100%;
+  max-width: 450px;
+  border-radius: 10px;
+  padding: 30px;
+  text-align: center;
+  background-color: white;
+  border: 2px solid crimson;
+  box-shadow: 0 5px 15px rgba(252, 58, 87, 0.733);
+}
+
+.input-field
+{
+  position: relative;
+  margin: 15px 0;
+}
+
+.input-field input
+{
+  width: 100%;
+  padding: 12px 10px;
+  font-size: 1rem;
+  border: 1px solid crimson;
+  border-radius: 4px;
+  outline: none;
+  background: none;
+}
+
+.input-field label 
+{
+  position: relative;
+  left: 10px;
+  top: 12px;
+  color: #999;
+  font-size: 1rem;
+  background-color: white;
+  padding: 0 3px;
+}
